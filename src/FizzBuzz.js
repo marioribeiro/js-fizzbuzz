@@ -26,8 +26,14 @@ FizzBuzz.prototype._isNotDivisibleBy = function(divisor_1, divisor_2, number) {
 var formFizzBuzz = document.getElementById("form");
 
 formFizzBuzz.onsubmit = function(evt){
+  var number = document.getElementById("number").value;
   evt.preventDefault();
-  var fizzBuzz = new FizzBuzz()
-  alert(fizzBuzz.play(document.getElementById("number").value));
+  var fizzBuzz = new FizzBuzz();
+  if (number === "") {
+    alert("Enter a number")
+  } else {
+    alert(fizzBuzz.play(number));
+  }
+  
 }
     
